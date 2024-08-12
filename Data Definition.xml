@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.sap.adt.cds.ddl.ui.template.context.type.view.creation" deleted="false" description="Consumption View" enabled="true" name="SUPORTIS_Consumption">@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
+@EndUserText.label: '${ddl_source_description}'
+@Metadata.ignorePropagatedAnnotations: true
+define root view entity ${ddl_source_name} 
+  provider contract transactional_query
+  as projection on ${data_source_name}
+{
+  ${cursor}
+  // Strg+Space -&gt; Insert all Elements
+  // Beispiel für Virtuelles Feld (imageUrl, url.mimeType nur wenn es ein Bild ist)
+  // Name der Klasse muss angepasst werden, Label und Feldname und ggfs. Feld-Typ
+  // @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZCL_KLASSENNAME'
+  // @EndUserText.label: 'Label'
+  // @Semantics.imageUrl: true
+  // @Semantics.url.mimeType: 'image/jpg'
+  // virtual Feldname: abap.char(256),
+  
+}
+</template><template autoinsert="true" context="com.sap.adt.cds.ddl.ui.template.context.type.view.creation" deleted="false" description="Interface View" enabled="true" name="SUPORTIS_InterfaceView">@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: '${ddl_source_description}'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+  serviceQuality: #X,
+  sizeCategory: #S,
+  dataClass: #MIXED
+}
+define root view entity ${ddl_source_name} as select from ${data_source_name}
+{
+  ${cursor}
+-- Strg+Space -&gt; Insert all elements (template)
+}
+</template></templates>

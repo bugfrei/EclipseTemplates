@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="ABAP" deleted="false" description="Behavior Instance Authorizations" enabled="true" name="SUPORTIS_InstanceAuthorization">    METHODS get_instance_authorizations FOR INSTANCE AUTHORIZATION
+      IMPORTING keys REQUEST requested_authorizations FOR zi_z12_criticality RESULT result.
+
+" In IMPLEMENTATION verschieben:
+" Wird benötigt wenn: authorization master ( instance )   angegeben wurde 
+  METHOD get_instance_authorizations.
+  ENDMETHOD.
+</template><template autoinsert="true" context="ABAP" deleted="false" description="Behavior Imp: Instance Feature" enabled="true" name="SUPORTIS_InstanceFeature">    METHODS get_instance_features FOR INSTANCE FEATURES
+      IMPORTING keys REQUEST requested_features FOR zi_z12_criticality RESULT result.
+
+" In IMPLEMENTATION verschieben:
+" Wird benötigt wenn: field ( features: instance )        für ein Feld definiert wurde
+  METHOD get_instance_features.
+  ENDMETHOD.
+
+</template></templates>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.sap.adt.cds.behaviordefinition.ui.template.context.type.bdef" deleted="false" description="Field (Numbering, Readonly)" enabled="true" name="SUPORTIS_Field">  field ( numbering : managed, readonly ) ${fieldname};
+</template><template autoinsert="true" context="com.sap.adt.cds.behaviordefinition.ui.template.context.type.bdef" deleted="false" description="Hilfe Kommentage" enabled="true" name="SUPORTIS_Hilfe">// Felderverhalten definieren (SUPORTIS_Field)
+// field ( ... ) Feldname;
+//         ... numbering : manager, readonly, ... &lt;strg-space&gt;
+//
+// mapping for &lt;dbname&gt; (SUPORTIS_Mapping)
+//
+// auf den Klassenname in Zeile 1: Strg+1 um Klasse zu erstellen</template><template autoinsert="true" context="com.sap.adt.cds.behaviordefinition.ui.template.context.type.bdef" deleted="false" description="Mapping for ..." enabled="true" name="SUPORTIS_Mapping">mapping for ${tablename}
+    {
+      // AsName = fieldName;
+      // ...
+      // Umgekehr wie bei der View
+      // fieldName AS AsName;
+      //
+      // Zeilen in {} der View kopieren folgende Zeile in der PowerShell ausführen und dann im Mapping einfügen (danach den Kommentar hier löschen)
+      // ${cursor}$$o=""; Read-Host "Wenn Code kopiert enter drücken"; Get-Clipboard | ForEach-Object { if ($$_.Trim() -ne "") { $$_ = $$_.Trim().Replace("key ", ""); $$_ = ($$_.Replace(",","") -split "as "); if ($$_.Count -eq 2) { $$o += ($$_.Trim()[1..0] -join " = ") + ";`n" } } }; Set-Clipboard $$o; Write-Host "Fertig - Neuer Code in Zwischenablage."
+      
+    }
+  </template></templates>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.sap.adt.cds.ddlx.ui.template.context.type.ddlx" deleted="false" description="Annotate für ein Feld (komplette Zeile markiert!)" enabled="true" name="SUPORTIS_Annotate">@UI.lineItem: [ {
+  position: 10,
+  importance: #MEDIUM,
+  label: '_'
+} ]
+@UI.identification: [ {
+  position: 10,
+  label: '_',
+  importance: #MEDIUM
+} ]
+${word_selection}
+</template><template autoinsert="true" context="com.sap.adt.cds.ddlx.ui.template.context.type.annotateEntity.creation" deleted="false" description="Metadata Extension mit Header, Facet" enabled="true" name="SUPORTIS_Metadata">@Metadata.layer: #PARTNER
+
+@UI: { 
+  headerInfo: { 
+    typeName: '${einzahl}',
+    typeNamePlural: '${mehrzahl}',
+    title: { 
+      type: #STANDARD,
+      label: '${einzahl}',
+      value: '${keyfield}'
+    }
+  }
+}
+
+annotate entity ${entity_name}
+with  -- oder with parameters parameterNamea : Typ  z.B. with parameters age : zbdpage
+{
+  @UI.facet: [ {
+    id: '${einzahl}',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: '${einzahl}',
+    position: 10
+   } ]
+
+   ${cursor}
+
+    // Strg+Space -&gt; Insert all Elements
+    // Schnelle Standardwerte mit: Cursor am Zeilenanfang/1. Element: Shift+Cursor down
+    //         dann Template   SUPORTIS_Annotationen
+    //             für alle Zeilen/Elemente wieder Shift+Cursor down -&gt; Template ...
+
+    // Beispiel für Tabelle,Object Page mit einer eigenen Action:
+    //     dataAction: Name der Action, wie in den Behavior-Definitions angegeben (action (...) name ...)
+    //
+    // @UI.lineItem: [ {
+    //   position: 10,
+    //   importance: #MEDIUM,
+    //   label: 'Student ID'
+    // }, {  
+    //   type: #FOR_ACTION,
+    //   dataAction: 'delete',
+    //   label: 'Kein Treffer'
+    // } ]
+    // @UI.identification: [ {
+    //   position: 10,
+    //   label: 'Student ID',
+    //   importance: #MEDIUM
+    // }, { 
+    //   type: #FOR_ACTION,
+    //   dataAction: 'delete',
+    //   label: 'Kein Treffer'
+    // } ]
+    // Id;
+ }
+ </template></templates>
